@@ -620,6 +620,11 @@ add_action( 'init', 'sa_guard_swap_gate', 20 );
  *              رابطه‌ی والد · طبقه‌بندی اصلی.
  * فقط هشدار:  تعداد FAQ · تعداد لینک داخلی · مختصات · برچسب‌های «نیازمند بررسی».
  *
+ * سه دریچه‌ی فرار، به ترتیب نرمی:
+ *   ۱. نمایش → سفارشی‌سازی → حالت دروازه = soft  → هیچ‌چیز مانع انتشار نیست
+ *   ۲. add_filter( 'sa_guard_blocking', '__return_empty_array' );
+ *   ۳. define( 'SA_GUARD_RELAX_GATE', false );  → بازگشت به دروازه‌ی سخت قالب
+ *
  * @param array $data    داده‌ی پست.
  * @param array $postarr آرایه‌ی پست.
  * @return array
@@ -638,6 +643,10 @@ function sa_guard_gate_filter( $data, $postarr ) {
 	if ( ! $post_id || ! function_exists( 'sa_gate_missing' ) ) {
 		return $data;
 	}
+
+	// دریچه‌ی فرار قالب حفظ می‌شود: اگر مالک در سفارشی‌سازی حالت دروازه را روی
+	// «soft» گذاشته باشد، هیچ‌چیز جلوی انتشار را نمی‌گیرد و فقط هشدار می‌بینید.
+	$soft_mode = function_exists( 'sa_gate_mode' ) && 'soft' === sa_gate_mode();
 
 	$missing  = (array) sa_gate_missing( $post_id, $data['post_type'], null );
 	$warnings = function_exists( 'sa_gate_warnings' )
@@ -663,6 +672,11 @@ function sa_guard_gate_filter( $data, $postarr ) {
 	 * @param string   $type     CPT.
 	 */
 	$blocking = (array) apply_filters( 'sa_guard_blocking', $blocking, $post_id, $data['post_type'] );
+
+	if ( $soft_mode && $blocking ) {
+		$warnings = array_merge( $warnings, $blocking );
+		$blocking = array();
+	}
 
 	if ( $blocking || $warnings ) {
 		set_transient(

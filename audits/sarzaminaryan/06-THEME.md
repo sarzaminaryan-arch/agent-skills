@@ -1,4 +1,4 @@
-# قالب فرزند ۲.۷.۰ — نصب و تأیید
+# قالب فرزند ۲.۸.۰ — نصب و تأیید
 
 > **افزونه‌ی mu-plugin منتفی شد.** همه‌چیز رفت داخل خود قالب فرزند. این هم امن‌تر
 > است (از پیشخوان نصب می‌شود، نه File Manager) و هم برگشت‌پذیر (پوسته‌ی قبلی را
@@ -9,7 +9,7 @@
 **نشانی درست (تست‌شده):**
 
 ```
-https://raw.githubusercontent.com/sarzaminaryan-arch/agent-skills/refs/heads/arena/01a0ef63-agent-skills/audits/sarzaminaryan/downloads/sarzaminaryan-child-v2.7.0.zip
+https://raw.githubusercontent.com/sarzaminaryan-arch/agent-skills/refs/heads/arena/01a0ef63-agent-skills/audits/sarzaminaryan/downloads/sarzaminaryan-child-v2.8.0.zip
 ```
 
 > نام شاخه‌ی ما اسلش دارد (`arena/01a0ef63-...`). به همین دلیل شکل
@@ -18,7 +18,7 @@ https://raw.githubusercontent.com/sarzaminaryan-arch/agent-skills/refs/heads/are
 
 **یا مطمئن‌ترین راه — از خود گیت‌هاب:**
 
-https://github.com/sarzaminaryan-arch/agent-skills/blob/arena/01a0ef63-agent-skills/audits/sarzaminaryan/downloads/sarzaminaryan-child-v2.7.0.zip
+https://github.com/sarzaminaryan-arch/agent-skills/blob/arena/01a0ef63-agent-skills/audits/sarzaminaryan/downloads/sarzaminaryan-child-v2.8.0.zip
 
 این صفحه را باز کنید و دکمه‌ی **Download raw file** (آیکن ⤓ بالا سمت راست) را بزنید.
 

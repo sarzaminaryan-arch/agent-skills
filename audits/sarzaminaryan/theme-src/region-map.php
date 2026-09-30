@@ -292,12 +292,23 @@ function sa_county_map_shortcode( $atts ) {
 add_shortcode( 'sa_county_map', 'sa_county_map_shortcode' );
 
 /**
- * نمایش خودکار نقشه در انتهای صفحه‌ی استان، درست پیش از بخش شهرستان‌ها.
+ * نمایش خودکار نقشه در انتهای صفحه‌ی استان.
+ *
+ * v2.8.0 — پیش‌فرض **خاموش**. نقشه‌ی بی‌نام شهرستانی برای مخاطب جذابیتی نداشت
+ * و زیرش کارت‌های تصویردار همان شهرستان‌ها می‌آمد؛ یعنی یک چیز، دو بار.
+ * تابع و کد کوتاه سر جایشان می‌مانند تا هر جا خواستید دستی بگذاریدش:
+ *
+ *     [sa_county_map province="isfahan"]
+ *
+ * برای برگرداندن نمایش خودکار:  define( 'SA_COUNTY_MAP_AUTO', true );
  *
  * @param string $content محتوا.
  * @return string
  */
 function sa_county_map_auto( $content ) {
+	if ( ! ( defined( 'SA_COUNTY_MAP_AUTO' ) && SA_COUNTY_MAP_AUTO ) ) {
+		return $content;
+	}
 	if ( is_admin() || is_feed() || ! is_singular( 'province' ) || ! in_the_loop() || ! is_main_query() ) {
 		return $content;
 	}

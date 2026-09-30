@@ -12,20 +12,20 @@
 | [`03-ROADMAP.md`](03-ROADMAP.md) | برنامه‌ی ۹۰ روزه‌ی محتوا — «چه بنویسیم» | اجرا |
 | [`04-PLAN.md`](04-PLAN.md) | **گام‌به‌گام از امروز تا درآمد از اقامتگاه‌ها** — «چه کاری، چه روزی» | اجرا، از روز ۱ |
 | [`05-CHECKLIST.md`](05-CHECKLIST.md) | **چک‌لیست شماره‌دار: چه کاری، چقدر زمان، شما یا من** | شروع از اینجا |
-| [`06-THEME.md`](06-THEME.md) | **نصب قالب فرزند ۲.۷.۰** — همه‌ی اصلاح‌ها داخل خود قالب | نصب |
-| [`downloads/sarzaminaryan-child-v2.7.0.zip`](downloads/) | بسته‌ی آماده‌ی نصب از پیشخوان | دانلود |
+| [`06-THEME.md`](06-THEME.md) | **نصب قالب فرزند ۲.۸.۰** — همه‌ی اصلاح‌ها داخل خود قالب | نصب |
+| [`downloads/sarzaminaryan-child-v2.8.0.zip`](downloads/) | بسته‌ی آماده‌ی نصب از پیشخوان | دانلود |
 | [`pages/`](pages/) | **چهار برگه‌ی آماده‌ی کپی** — درباره ما، تماس با ما، حریم خصوصی، سیاست تحریریه | کپی/پیست |
 
 
 ## شروع سریع — ۳ دقیقه
 
-**افزونه‌ی mu-plugin منتفی شد.** همه‌ی اصلاح‌ها رفت داخل قالب فرزند ۲.۷.۰ —
+**افزونه‌ی mu-plugin منتفی شد.** همه‌ی اصلاح‌ها رفت داخل قالب فرزند ۲.۸.۰ —
 امن‌تر (نصب از پیشخوان، نه File Manager) و برگشت‌پذیر (پوسته‌ی قبلی را فعال کنید).
 
 **دانلود** (نام شاخه اسلش دارد، پس شکل `github.com/…/raw/…` ۴۰۴ می‌دهد — این را بردارید):
 
 ```
-https://raw.githubusercontent.com/sarzaminaryan-arch/agent-skills/refs/heads/arena/01a0ef63-agent-skills/audits/sarzaminaryan/downloads/sarzaminaryan-child-v2.7.0.zip
+https://raw.githubusercontent.com/sarzaminaryan-arch/agent-skills/refs/heads/arena/01a0ef63-agent-skills/audits/sarzaminaryan/downloads/sarzaminaryan-child-v2.8.0.zip
 ```
 
 ```

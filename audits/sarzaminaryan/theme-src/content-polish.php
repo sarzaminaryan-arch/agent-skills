@@ -177,70 +177,21 @@ add_filter( 'the_content', 'sa_polish_filter', 10 );
 
 /*
 |==============================================================================
-| فهرست شهرستان‌های استان — مهم‌ترین شکاف پیوند داخلی
+| فهرست چیپی شهرستان‌ها — حذف شد در v2.8.0
 |==============================================================================
-| نقشه‌ی SVG فقط شهرستان‌هایی را نشان می‌دهد که مرزشان در داده‌ی مبدأ بود؛
-| ۱۲ شهرستان (از جمله ارومیه) در آن داده نبودند و روی نقشه غایب‌اند. یعنی اگر
-| صفحه‌شان منتشر شود، از صفحه‌ی استان هیچ راهی به آن‌ها نیست.
+| در v2.6.0 زیر نقشه یک فهرست دکمه‌ای از همه‌ی شهرستان‌های استان می‌آمد.
+| دو ایراد داشت:
 |
-| این فهرست، همه‌ی شهرستان‌های استان را می‌آورد — چه روی نقشه باشند چه نه.
-| منتشرشده = لینک، منتشرنشده = متن خاکستری بدون href.
+|   ۱. تکراری بود. قالب از قبل زیر همان صفحه کارت‌های تصویردار شهرستان‌ها را
+|      می‌ساخت (sa_cards_section + sa_get_children). نتیجه: نام هر شهرستان
+|      سه بار در یک صفحه — روی نقشه، در فهرست چیپی، و روی کارت.
+|
+|   ۲. غلط بود. تطبیق بر پایه‌ی نامک داده‌ی جغرافیایی انجام می‌شد و برای
+|      ۱۲ شهرستان نامک‌ها فرق داشت (آران و بیدگل، فلاورجان، تیران و کرون،
+|      بوئین‌میاندشت، خور و بیابانک، شاهین‌شهر و میمه و…). آن‌ها خاکستری و
+|      «بدون صفحه» نشان داده می‌شدند، در حالی که همان پایین کارت تصویردار و
+|      لینک‌دارشان بود. یعنی صفحه با خودش تناقض داشت.
+|
+| کارت‌های تصویردار هم کامل‌ترند (عکس + شعار + استان) و هم از رابطه‌ی واقعی
+| دیتابیس می‌آیند، نه از حدسِ نامک. همان می‌ماند و بس.
 */
-
-/**
- * فهرست شهرستان‌های یک استان.
- *
- * @param string $province نامک استان.
- * @return string
- */
-function sa_county_list( $province ) {
-	if ( ! function_exists( 'sa_region_facts' ) ) {
-		return '';
-	}
-	$facts = sa_region_facts();
-	$rows  = isset( $facts['counties'][ $province ] ) ? (array) $facts['counties'][ $province ] : array();
-	if ( ! $rows ) {
-		return '';
-	}
-	$cities = function_exists( 'sa_region_published_cities' ) ? sa_region_published_cities() : array();
-
-	$items = '';
-	$done  = 0;
-	foreach ( $rows as $slug => $row ) {
-		$name = isset( $row['name'] ) ? $row['name'] : $slug;
-		if ( isset( $cities[ $slug ] ) ) {
-			++$done;
-			$items .= '<li><a class="sa-clist__on" href="' . esc_url( $cities[ $slug ][0] ) . '">'
-				. esc_html( $cities[ $slug ][1] ) . '</a></li>';
-		} else {
-			$items .= '<li><span class="sa-clist__off">' . esc_html( $name ) . '</span></li>';
-		}
-	}
-
-	$total = count( $rows );
-	return '<section class="sa-clist" aria-labelledby="sa-clist-title">'
-		. '<h2 id="sa-clist-title">شهرستان‌های این استان</h2>'
-		. '<ul class="sa-clist__grid">' . $items . '</ul>'
-		. '<p class="sa-clist__cap">'
-		. esc_html( sa_fa_digits( (string) $done ) ) . ' از '
-		. esc_html( sa_fa_digits( (string) $total ) ) . ' شهرستان صفحه‌ی اختصاصی دارد.'
-		. '</p></section>';
-}
-
-/**
- * نمایش خودکار زیر نقشه‌ی استان.
- *
- * @param string $content محتوا.
- * @return string
- */
-function sa_county_list_auto( $content ) {
-	if ( is_admin() || is_feed() || ! is_singular( 'province' ) || ! in_the_loop() || ! is_main_query() ) {
-		return $content;
-	}
-	if ( false !== strpos( $content, 'sa-clist' ) ) {
-		return $content;
-	}
-	$list = sa_county_list( (string) get_post_field( 'post_name', get_queried_object_id() ) );
-	return $list ? $content . $list : $content;
-}
-add_filter( 'the_content', 'sa_county_list_auto', 15 );

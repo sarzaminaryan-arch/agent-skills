@@ -56,6 +56,15 @@ For sites running in Persian (`fa_IR`). These skills assume RTL layout, Persian 
 |-------|-----------------|
 | **content-humanizer** | Articles that read human, not machine-written — structure, rhythm, AI-tell removal, Persian style, with a linter |
 | **featured-image-art-direction** | Featured/hero/OG images: concept over cliché, prompt anatomy, Persian text-on-image, WordPress sizing and alt text |
+| **geo-content-strategy** | Place/directory content at scale: information gain vs. derivative pages, outbound-link economy, content unit choice, publish gates that ship, with a corpus auditor |
+
+## Audits
+
+Applied write-ups produced with these skills, kept as worked examples.
+
+| Audit | Contents |
+|-------|----------|
+| [`audits/sarzaminaryan`](audits/sarzaminaryan) | 113-article Persian travel corpus: measured diagnosis, replacement rule-set, 90-day plan, and `sa-content-guard.php` — a drop-in mu-plugin that fixes 7,059 outbound dofollow links, duplicate H1s, 404 home-page links and a deadlocked publish gate at render time |
 
 ## How It Works
 

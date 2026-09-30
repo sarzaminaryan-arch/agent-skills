@@ -73,6 +73,8 @@ Route here when the site language is Persian (`fa_IR`), the request is written i
   - Route → `content-humanizer`.
 - **Featured images, hero images, OG/social cards, in-article illustrations, image generation prompts**
   - Route → `featured-image-art-direction`.
+- **Many pages that differ mainly by a place name (city/province/region guides, directories, programmatic SEO sets) / "we wrote hundreds of pages and nothing ranks" / deciding whether a content project is worth continuing**
+  - Route → `geo-content-strategy`. For prose quality, also read `content-humanizer`; for Persian on-page, `wp-persian-seo`.
 
 ## Step 3: guardrails checklist (always)
 

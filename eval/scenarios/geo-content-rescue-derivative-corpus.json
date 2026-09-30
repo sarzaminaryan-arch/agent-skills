@@ -1,0 +1,31 @@
+{
+  "name": "Rescue a place-content corpus that leaks authority to Wikipedia and cannot publish",
+  "skills": ["geo-content-strategy", "content-humanizer", "wp-persian-seo"],
+  "query": "سایت ما ۳۱ استان و ۸۲ شهرستان ایران را پوشش داده، ولی فقط ۴ استان منتشر شده و هیچ ترافیکی نداریم. عیب‌یابی کن، یک قانون ثابت اصلاح‌شده بده، کدی بنویس که قالب خودکار رفتار اشتباه را اصلاح کند، و اگر این مسیر بی‌سرانجام است مسیر درست را بگو.",
+  "expected_behavior": [
+    "Step 1: Locate the real corpus (importer JSON / Markdown / live site) instead of asking for an export that may not exist; state plainly if a promised file is missing and proceed with a better source",
+    "Step 2: Run scripts/geo_content_audit.mjs over the corpus and lead the report with measured numbers, not opinion",
+    "Step 3: Quantify the outbound-link economy: external:internal ratio, nofollow count, share of the single largest citation domain",
+    "Step 4: Verify the live site — fetch the home page and a linked child URL to prove whether internal links resolve",
+    "Step 5: Read the publish gate and identify conditions that cannot be satisfied by a single author on a single page",
+    "Step 6: Name the one structural problem (content unit or link economy) before listing secondary defects",
+    "Step 7: Deliver render-time auto-fix code that never mutates stored content and is reversible by deleting one file",
+    "Step 8: Replace the sprawling rule-set with a short one where every rule is PASS/FAIL checkable by a script",
+    "Step 9: Give a dated plan with numeric success criteria and an explicit do-not-do list",
+    "Step 10: Answer the strategic question directly — say whether the current path is futile and why, without hedging"
+  ],
+  "success_criteria": [
+    "geo_content_audit.mjs is executed against the real corpus and its output is quoted, not paraphrased",
+    "The report states external:internal link ratio, nofollow count, and top-domain citation share as numbers",
+    "Duplicate H1s are detected by comparing theme output against imported body markup, not assumed",
+    "Dead internal links are proven with an actual HTTP fetch of at least one linked URL",
+    "The auto-fix is delivered as a single mu-plugin with independent, constant-toggleable modules and a documented kill switch",
+    "The citation transform deduplicates by URL, emits rel=\"nofollow ugc noopener noreferrer\", and is idempotent and cached",
+    "Dead links are neutralised by stripping href rather than replacing the <a> element, so SVG links do not break",
+    "Before/after numbers for the auto-fix are computed by running the transform over the corpus, not estimated",
+    "The replacement rule-set removes at least one prior rule and explains what damage it caused",
+    "The publish gate is split into blocking and advisory, with advisory conditions never forcing draft status",
+    "The strategy section recommends changing the content unit from administrative area to decision unit, and names a non-scalable data source as the differentiator",
+    "No ranking guarantees are made; recommendations are stated as mechanisms with thresholds"
+  ]
+}

@@ -1,0 +1,144 @@
+<!-- ═══════════════════════════════════════════════════════════════
+     تماس با ما — سرزمین آریان
+     نصب: برگه‌ی جدید با نامک contact → بلوک «HTML سفارشی» → همه‌ی این فایل را پیست کنید
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="sa-pg sa-pg--contact">
+
+<style>
+.sa-pg{--ink:#0b1424;--blue:#2f6bff;--gold:#d9b166;--mut:#5b6b80;--line:rgba(11,20,36,.10);
+  direction:rtl;color:var(--ink);line-height:2}
+.sa-pg *{box-sizing:border-box}
+.sa-pg p{margin:0 0 1.15em}
+
+.sa-pg__hero{position:relative;overflow:hidden;border-radius:22px;padding:40px 30px 34px;
+  background:radial-gradient(700px 300px at 82% -10%,rgba(47,107,255,.28),transparent 68%),
+             linear-gradient(160deg,#101c33,var(--ink));color:#fff;margin:0 0 30px}
+.sa-pg__hero::after{content:"";position:absolute;inset-inline:0;bottom:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--blue) 30%,var(--gold) 52%,var(--blue) 74%,transparent)}
+.sa-pg__hero h2{margin:0 0 12px;font-size:clamp(22px,4.2vw,31px);line-height:1.5;color:#fff;font-weight:800}
+.sa-pg__hero p{margin:0;color:#c6d5ef;max-width:58ch}
+
+/* جعبه‌ی ایمیل */
+.sa-pg__mail{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;
+  margin:0 0 30px;padding:22px 24px;border-radius:18px;background:#fff;border:1px solid var(--line);
+  box-shadow:0 3px 8px -4px rgba(11,20,36,.12),0 28px 44px -32px rgba(11,20,36,.45)}
+.sa-pg__mail small{display:block;color:var(--mut);font-size:13px;margin-bottom:4px}
+.sa-pg__mail .addr{font-size:clamp(17px,3.4vw,22px);font-weight:800;color:#16326e;direction:ltr;
+  unicode-bidi:isolate;letter-spacing:.2px}
+.sa-pg__btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:14px;
+  background:linear-gradient(135deg,#4d86ff,#2457e6);color:#fff;font-weight:700;text-decoration:none;
+  box-shadow:0 16px 28px -14px rgba(47,107,255,.85);transition:transform .2s}
+.sa-pg__btn:hover{transform:translateY(-2px);color:#fff}
+
+.sa-pg h3{margin:32px 0 14px;font-size:clamp(18px,3vw,22px);font-weight:800;position:relative;padding-inline-start:14px}
+.sa-pg h3::before{content:"";position:absolute;inset-inline-start:0;top:.32em;width:4px;height:1.1em;
+  border-radius:4px;background:linear-gradient(180deg,var(--blue),var(--gold))}
+
+/* موضوع‌ها */
+.sa-pg__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0 6px}
+.sa-pg__card{padding:18px;border-radius:16px;background:#fff;border:1px solid var(--line);
+  box-shadow:0 2px 6px -3px rgba(11,20,36,.10),0 22px 38px -30px rgba(11,20,36,.40)}
+.sa-pg__card b{display:block;margin-bottom:6px;font-size:15px;color:#16326e}
+.sa-pg__card span{display:block;font-size:14px;color:var(--mut);line-height:1.95}
+.sa-pg__card em{display:block;margin-top:9px;font-style:normal;font-size:12.5px;color:var(--blue);font-weight:700}
+
+/* راهنمای نوشتن */
+.sa-pg__tips{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:9px;counter-reset:t}
+.sa-pg__tips li{position:relative;padding:12px 48px 12px 16px;border-radius:14px;background:#f7faff;
+  border:1px solid var(--line);font-size:14.5px;line-height:1.95}
+.sa-pg__tips li::before{counter-increment:t;content:counter(t);position:absolute;inset-inline-start:15px;
+  top:12px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;
+  background:var(--ink);color:#fff;font-weight:700}
+
+.sa-pg__note{margin-top:26px;padding:18px 20px;border-radius:14px;background:#fff8ea;
+  border:1px solid rgba(217,177,102,.42);font-size:14.5px;line-height:1.95}
+.sa-pg__note b{color:#7a5c1e}
+
+@media(max-width:520px){
+  .sa-pg__hero{padding:30px 20px 26px;border-radius:18px}
+  .sa-pg__mail{padding:18px;flex-direction:column;align-items:stretch;text-align:center}
+  .sa-pg__btn{justify-content:center}
+}
+/* قالب متن مقاله را justify می‌کند؛ این عناصر نباید کش بیایند */
+.sa-pg__hero p,.sa-pg__card span,.sa-pg__card em,.sa-pg__tldr li,.sa-pg__vows li,
+.sa-pg__tips li,.sa-pg__ladder li,.sa-pg__red li,.sa-pg__box,.sa-pg__note,.sa-pg__ok,
+.sa-pg__mail,.sa-pg__sign,.sa-pg__date,.sa-pg__verse{text-align:start;text-align-last:auto}
+.sa-pg__verse{text-align:center}
+</style>
+
+<section class="sa-pg__hero">
+  <h2>حرفتان را بنویسید — خوانده می‌شود.</h2>
+  <p>سرزمین آریان را یک نفر می‌نویسد و صدها نفر کامل‌ترش می‌کنند. هر پیامی که می‌رسد
+     خوانده می‌شود و اگر اصلاحی لازم باشد، اعمال می‌شود.</p>
+</section>
+
+<div class="sa-pg__mail">
+  <div>
+    <small>نشانی ایمیل</small>
+    <div class="addr">Mail@sarzaminaryan.ir</div>
+  </div>
+  <a class="sa-pg__btn" href="mailto:Mail@sarzaminaryan.ir">نوشتن ایمیل</a>
+</div>
+
+<h3>برای چه چیزهایی بنویسید</h3>
+
+<div class="sa-pg__grid">
+
+  <div class="sa-pg__card">
+    <b>اصلاح اشتباه</b>
+    <span>عددی غلط است؟ نام روستایی جا افتاده؟ جاده‌ای که نوشته‌ایم آسفالت است، خاکی شده؟
+          بگویید تا درست کنیم.</span>
+    <em>موضوع ایمیل: اصلاح — نام شهرستان</em>
+  </div>
+
+  <div class="sa-pg__card">
+    <b>روایت محلی</b>
+    <span>اهل همان دیارید و چیزی می‌دانید که در هیچ منبعی نیست؟ آیینی، غذایی، کارگاهی،
+          مسیری. همین‌ها ارزش واقعی این سایت‌اند.</span>
+    <em>موضوع ایمیل: روایت — نام شهرستان</em>
+  </div>
+
+  <div class="sa-pg__card">
+    <b>عکس واقعی</b>
+    <span>عکس خودتان از یک جاذبه، روستا یا جاده. با نام شما منتشر می‌شود و حق عکس
+          پیش خودتان می‌ماند.</span>
+    <em>موضوع ایمیل: عکس — نام مکان</em>
+  </div>
+
+  <div class="sa-pg__card">
+    <b>اقامتگاه و کسب‌وکار محلی</b>
+    <span>اقامتگاه بوم‌گردی، کارگاه صنایع‌دستی یا راهنمای محلی دارید؟ معرفی‌اش در سایت
+          رایگان است.</span>
+    <em>موضوع ایمیل: معرفی — نام مجموعه</em>
+  </div>
+
+  <div class="sa-pg__card">
+    <b>همکاری و تبلیغات</b>
+    <span>پیشنهاد همکاری، تبلیغ یا مشارکت محتوایی. هر تبلیغی که منتشر شود، با برچسب
+          «تبلیغ» مشخص می‌شود.</span>
+    <em>موضوع ایمیل: همکاری</em>
+  </div>
+
+  <div class="sa-pg__card">
+    <b>گزارش مشکل فنی</b>
+    <span>صفحه‌ای باز نمی‌شود، تصویری نمی‌آید، چیزی روی گوشی به‌هم‌ریخته است.</span>
+    <em>موضوع ایمیل: مشکل فنی</em>
+  </div>
+
+</div>
+
+<h3>چطور بنویسید تا زودتر به نتیجه برسد</h3>
+
+<ul class="sa-pg__tips">
+  <li><b>نام شهرستان یا نشانی صفحه را بنویسید.</b> بدون آن، پیدا کردن جای اشکال وقت می‌برد.</li>
+  <li><b>اگر می‌شود، منبع بدهید.</b> یک لینک، یک عکس، یا حتی «خودم آنجا زندگی می‌کنم» کافی است.</li>
+  <li><b>اگر می‌خواهید نامتان بیاید، بنویسید.</b> وگرنه اصلاح بدون نام اعمال می‌شود.</li>
+</ul>
+
+<div class="sa-pg__note">
+  <b>پاسخ‌گویی:</b> این سایت را یک نفر اداره می‌کند، پس ممکن است جواب چند روز طول بکشد.
+  اما هر پیام خوانده می‌شود. اصلاح‌های فوری (عدد یا نام غلط) معمولاً همان هفته اعمال می‌شوند.
+</div>
+
+</div>

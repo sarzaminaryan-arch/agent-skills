@@ -1,0 +1,155 @@
+<!-- ═══════════════════════════════════════════════════════════════
+     حریم خصوصی — سرزمین آریان
+     نصب: برگه‌ی جدید با نامک privacy → بلوک «HTML سفارشی» → همه‌ی این فایل را پیست کنید
+     نکته: اگر گوگل آنالیتیکس یا کد تبلیغاتی ندارید، بخش «ابزارهای دیگران» را حذف کنید.
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="sa-pg sa-pg--privacy">
+
+<style>
+.sa-pg{--ink:#0b1424;--blue:#2f6bff;--gold:#d9b166;--mut:#5b6b80;--line:rgba(11,20,36,.10);
+  direction:rtl;color:var(--ink);line-height:2}
+.sa-pg *{box-sizing:border-box}
+.sa-pg p{margin:0 0 1.15em}
+
+.sa-pg__hero{position:relative;overflow:hidden;border-radius:22px;padding:38px 30px 32px;
+  background:radial-gradient(700px 300px at 82% -10%,rgba(47,107,255,.26),transparent 68%),
+             linear-gradient(160deg,#101c33,var(--ink));color:#fff;margin:0 0 28px}
+.sa-pg__hero::after{content:"";position:absolute;inset-inline:0;bottom:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--blue) 30%,var(--gold) 52%,var(--blue) 74%,transparent)}
+.sa-pg__hero h2{margin:0 0 12px;font-size:clamp(21px,4vw,29px);line-height:1.5;color:#fff;font-weight:800}
+.sa-pg__hero p{margin:0;color:#c6d5ef;max-width:58ch}
+
+/* خلاصه‌ی سه‌خطی */
+.sa-pg__tldr{margin:0 0 30px;padding:20px 22px;border-radius:18px;background:#f2f8ff;
+  border:1px solid rgba(47,107,255,.20)}
+.sa-pg__tldr b{display:block;margin-bottom:8px;color:#16326e;font-size:15px}
+.sa-pg__tldr ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.sa-pg__tldr li{position:relative;padding-inline-start:24px;font-size:14.5px;line-height:1.95}
+.sa-pg__tldr li::before{content:"←";position:absolute;inset-inline-start:0;color:var(--blue);font-weight:700}
+
+.sa-pg h3{margin:32px 0 12px;font-size:clamp(17px,2.9vw,21px);font-weight:800;position:relative;padding-inline-start:14px}
+.sa-pg h3::before{content:"";position:absolute;inset-inline-start:0;top:.32em;width:4px;height:1.1em;
+  border-radius:4px;background:linear-gradient(180deg,var(--blue),var(--gold))}
+
+.sa-pg ul.sa-pg__list{margin:0 0 1.15em;padding-inline-start:1.3em}
+.sa-pg ul.sa-pg__list li{margin-bottom:.5em}
+
+.sa-pg__box{padding:18px 20px;border-radius:15px;background:#fff;border:1px solid var(--line);
+  box-shadow:0 2px 6px -3px rgba(11,20,36,.10);margin:0 0 1.15em}
+.sa-pg__box b{color:#16326e}
+
+.sa-pg__ok{padding:18px 20px;border-radius:15px;background:#f2fbf5;
+  border:1px solid rgba(34,150,83,.28);margin:0 0 1.15em}
+.sa-pg__ok b{color:#1c6b3c}
+
+.sa-pg__date{margin-top:30px;padding-top:16px;border-top:1px solid var(--line);
+  color:var(--mut);font-size:13.5px}
+.sa-pg a{color:var(--blue);font-weight:700;text-decoration:none}
+.sa-pg a:hover{text-decoration:underline}
+
+@media(max-width:520px){
+  .sa-pg__hero{padding:28px 20px 24px;border-radius:18px}
+}
+/* قالب متن مقاله را justify می‌کند؛ این عناصر نباید کش بیایند */
+.sa-pg__hero p,.sa-pg__card span,.sa-pg__card em,.sa-pg__tldr li,.sa-pg__vows li,
+.sa-pg__tips li,.sa-pg__ladder li,.sa-pg__red li,.sa-pg__box,.sa-pg__note,.sa-pg__ok,
+.sa-pg__mail,.sa-pg__sign,.sa-pg__date,.sa-pg__verse{text-align:start;text-align-last:auto}
+.sa-pg__verse{text-align:center}
+</style>
+
+<section class="sa-pg__hero">
+  <h2>حریم خصوصی، بدون زبان حقوقی</h2>
+  <p>این صفحه را ساده نوشته‌ایم تا واقعاً خوانده شود. اگر جایی مبهم بود، بپرسید.</p>
+</section>
+
+<div class="sa-pg__tldr">
+  <b>خلاصه در سه خط</b>
+  <ul>
+    <li>ما حساب کاربری نداریم و از شما نمی‌خواهیم ثبت‌نام کنید.</li>
+    <li>هر چیزی که خودتان برای ما بفرستید (ایمیل، دیدگاه) پیش ما می‌ماند و فروخته نمی‌شود.</li>
+    <li>مثل هر سایت دیگری، چند آمار بی‌نام‌ونشان از بازدید جمع می‌شود تا بفهمیم چه چیزی مفید بوده.</li>
+  </ul>
+</div>
+
+<h3>چه چیزی از شما نگه می‌داریم</h3>
+
+<p><b>وقتی ایمیل می‌زنید.</b> نشانی ایمیل و متن پیامتان در صندوق ما می‌ماند. از آن فقط برای
+   جواب دادن به خودتان و اصلاح محتوای سایت استفاده می‌کنیم. اگر اصلاحی که فرستادید روی سایت
+   اعمال شود و خواسته باشید، فقط نامی که خودتان گفته‌اید منتشر می‌شود — نه ایمیلتان.</p>
+
+<p><b>وقتی دیدگاه می‌گذارید.</b> وردپرس نام، ایمیل و نشانی IP شما را ذخیره می‌کند. ایمیل و IP
+   هیچ‌وقت عمومی نمی‌شوند؛ فقط نام و متن دیدگاه دیده می‌شود.</p>
+
+<p><b>وقتی فقط صفحه‌ای را می‌خوانید.</b> مثل هر سایت دیگری، سرور یک ردیف در گزارش خودش
+   می‌نویسد: چه صفحه‌ای، چه ساعتی، از چه مرورگری. این گزارش‌ها برای رفع خطای فنی‌اند و
+   بعد از مدتی پاک می‌شوند.</p>
+
+<div class="sa-pg__ok">
+  <b>چه چیزهایی را اصلاً نمی‌خواهیم:</b> شماره‌ی ملی، اطلاعات بانکی، رمز، کپی مدارک.
+  اگر جایی در این سایت چنین چیزی از شما خواسته شد، آن صفحه مال ما نیست — فوراً به ما خبر دهید.
+</div>
+
+<h3>کوکی‌ها، به زبان آدمیزاد</h3>
+
+<p>کوکی یک یادداشت کوچک است که سایت در مرورگر شما می‌گذارد. ما از آن برای این چیزها
+   استفاده می‌کنیم:</p>
+
+<ul class="sa-pg__list">
+  <li>اگر دیدگاه بگذارید، نام و ایمیلتان یادش می‌ماند تا دفعه‌ی بعد دوباره ننویسید.</li>
+  <li>اگر مدیر سایت باشید، نگه می‌دارد که وارد شده‌اید.</li>
+  <li>آمار بازدید بی‌نام (کدام صفحه چند بار خوانده شده).</li>
+</ul>
+
+<p>کوکی‌های ما شما را در سایت‌های دیگر دنبال نمی‌کنند. هر وقت خواستید می‌توانید از تنظیمات
+   مرورگرتان همه‌ی کوکی‌ها را پاک کنید؛ سایت باز هم کار می‌کند.</p>
+
+<h3>ابزارهای دیگران</h3>
+
+<p>برای اینکه بفهمیم کدام مطلب به درد مردم خورده، از ابزار آمار گوگل
+   (Google Analytics / Search Console) استفاده می‌کنیم. این ابزارها آمار کلی می‌دهند —
+   مثلاً «۲۰۰ نفر صفحه‌ی کاشان را خواندند» — نه هویت تک‌تک افراد.</p>
+
+<p>بعضی صفحه‌ها نقشه‌ی گوگل یا ویدیوی آپارات دارند. وقتی چنین صفحه‌ای را باز می‌کنید،
+   آن سرویس هم مثل هر سایت دیگری بازدید شما را می‌بیند. قانون حریم خصوصی آن‌ها دست ما نیست.</p>
+
+<div class="sa-pg__box">
+  <b>تبلیغات:</b> اگر روزی تبلیغی در سایت منتشر شود، با برچسب روشن «تبلیغ» مشخص می‌شود و
+  همین صفحه هم به‌روز خواهد شد.
+</div>
+
+<h3>اطلاعات کجا نگهداری می‌شود</h3>
+
+<p>سایت روی سرور داخل ایران میزبانی می‌شود و پشتیبان‌ها هم همان‌جا نگه داشته می‌شوند.
+   اطلاعات شما را به هیچ شرکت یا شخص دیگری نمی‌فروشیم، اجاره نمی‌دهیم و رد و بدل نمی‌کنیم —
+   مگر جایی که قانون رسماً الزام کند.</p>
+
+<h3>حق شماست</h3>
+
+<ul class="sa-pg__list">
+  <li>بپرسید چه اطلاعاتی از شما داریم.</li>
+  <li>بخواهید اصلاحش کنیم.</li>
+  <li>بخواهید پاکش کنیم — دیدگاهتان را حذف کنیم یا ایمیلتان را از صندوق ببریم.</li>
+  <li>بخواهید نامتان از پای اصلاحی که فرستاده‌اید برداشته شود.</li>
+</ul>
+
+<p>برای هر کدام کافی است به <a href="mailto:Mail@sarzaminaryan.ir">Mail@sarzaminaryan.ir</a>
+   بنویسید. تا حد امکان ظرف یک هفته انجام می‌شود.</p>
+
+<h3>کودکان</h3>
+
+<p>این سایت برای همه است، اما عمداً از کودکان زیر ۱۳ سال اطلاعات نمی‌گیریم. اگر متوجه شویم
+   چنین چیزی ثبت شده، پاکش می‌کنیم.</p>
+
+<h3>اگر این صفحه عوض شود</h3>
+
+<p>اگر روزی روش کارمان تغییر کند، همین صفحه به‌روز می‌شود و تاریخ پایین عوض خواهد شد.
+   تغییر مهم را در صفحه‌ی اصلی هم اعلام می‌کنیم.</p>
+
+<div class="sa-pg__date">
+  آخرین به‌روزرسانی: مهر ۱۴۰۵ ·
+  مسئول: محمدرضا لک ·
+  <a href="mailto:Mail@sarzaminaryan.ir">Mail@sarzaminaryan.ir</a>
+</div>
+
+</div>

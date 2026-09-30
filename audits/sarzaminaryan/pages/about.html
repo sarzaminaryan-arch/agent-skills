@@ -1,0 +1,139 @@
+<!-- ═══════════════════════════════════════════════════════════════
+     درباره ما — سرزمین آریان
+     نصب: برگه‌ی جدید با نامک about → بلوک «HTML سفارشی» → همه‌ی این فایل را پیست کنید
+     ═══════════════════════════════════════════════════════════════ -->
+
+<div class="sa-pg sa-pg--about">
+
+<style>
+.sa-pg{--ink:#0b1424;--ink2:#14213b;--blue:#2f6bff;--gold:#d9b166;--mut:#5b6b80;--line:rgba(11,20,36,.10);
+  direction:rtl;color:var(--ink);line-height:2}
+.sa-pg *{box-sizing:border-box}
+.sa-pg p{margin:0 0 1.15em}
+
+/* هیرو */
+.sa-pg__hero{position:relative;overflow:hidden;border-radius:22px;padding:44px 30px 38px;
+  background:radial-gradient(760px 320px at 82% -10%,rgba(47,107,255,.28),transparent 68%),
+             linear-gradient(160deg,#101c33,var(--ink));color:#fff;margin:0 0 34px}
+.sa-pg__hero::after{content:"";position:absolute;inset-inline:0;bottom:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--blue) 30%,var(--gold) 52%,var(--blue) 74%,transparent)}
+.sa-pg__kicker{margin:0 0 10px;font-size:12px;letter-spacing:3px;color:#8fb0ff;font-weight:700}
+.sa-pg__hero h2{margin:0 0 14px;font-size:clamp(23px,4.4vw,34px);line-height:1.45;color:#fff;font-weight:800}
+.sa-pg__hero p{margin:0;color:#c6d5ef;font-size:clamp(15px,2.3vw,17px);max-width:60ch}
+
+/* بیت */
+.sa-pg__verse{margin:34px 0;padding:26px 24px;border-radius:18px;text-align:center;
+  background:linear-gradient(180deg,#fbfcff,#f1f5fc);border:1px solid var(--line);
+  box-shadow:0 26px 44px -34px rgba(11,20,36,.5)}
+.sa-pg__verse b{display:block;font-size:clamp(17px,3vw,22px);font-weight:800;line-height:2.1;color:#16326e}
+.sa-pg__verse span{display:block;margin-top:10px;font-size:13px;color:var(--mut)}
+
+/* بخش‌ها */
+.sa-pg h3{margin:34px 0 14px;font-size:clamp(18px,3vw,22px);font-weight:800;position:relative;padding-inline-start:14px}
+.sa-pg h3::before{content:"";position:absolute;inset-inline-start:0;top:.32em;width:4px;height:1.1em;
+  border-radius:4px;background:linear-gradient(180deg,var(--blue),var(--gold))}
+
+/* کارت‌ها */
+.sa-pg__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:20px 0 6px}
+.sa-pg__card{padding:18px 18px 16px;border-radius:16px;background:#fff;border:1px solid var(--line);
+  box-shadow:0 2px 6px -3px rgba(11,20,36,.10),0 22px 38px -30px rgba(11,20,36,.40)}
+.sa-pg__card b{display:block;margin-bottom:6px;font-size:15px;color:#16326e}
+.sa-pg__card span{font-size:14px;color:var(--mut);line-height:1.95}
+
+/* تعهدها */
+.sa-pg__vows{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.sa-pg__vows li{position:relative;padding:12px 44px 12px 16px;border-radius:14px;
+  background:#f7faff;border:1px solid var(--line);font-size:14.5px;line-height:1.95}
+.sa-pg__vows li::before{content:"✓";position:absolute;inset-inline-start:15px;top:12px;
+  width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;
+  background:var(--blue);color:#fff;font-weight:700}
+.sa-pg__vows li.no::before{content:"×";background:#d9534f}
+
+/* امضا */
+.sa-pg__sign{margin:34px 0 0;padding:22px 24px;border-radius:18px;
+  background:linear-gradient(160deg,#101c33,var(--ink));color:#c6d5ef;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px}
+.sa-pg__sign b{display:block;color:#fff;font-size:16px;margin-bottom:3px}
+.sa-pg__sign a{color:#8fb0ff;text-decoration:none;font-weight:700}
+.sa-pg__sign a:hover{color:#fff}
+
+@media(max-width:520px){
+  .sa-pg__hero{padding:32px 20px 28px;border-radius:18px}
+  .sa-pg__verse{padding:20px 16px}
+  .sa-pg__sign{padding:18px}
+}
+/* قالب متن مقاله را justify می‌کند؛ این عناصر نباید کش بیایند */
+.sa-pg__hero p,.sa-pg__card span,.sa-pg__card em,.sa-pg__tldr li,.sa-pg__vows li,
+.sa-pg__tips li,.sa-pg__ladder li,.sa-pg__red li,.sa-pg__box,.sa-pg__note,.sa-pg__ok,
+.sa-pg__mail,.sa-pg__sign,.sa-pg__date,.sa-pg__verse{text-align:start;text-align-last:auto}
+.sa-pg__verse{text-align:center}
+</style>
+
+<section class="sa-pg__hero">
+  <p class="sa-pg__kicker">SARZAMIN ARYAN</p>
+  <h2>این سایت از یک تصمیم ساده شروع شد: بروم و خودم ببینم.</h2>
+  <p>سرزمین آریان دانشنامه‌ی سفر ایران است — استان به استان، شهر به شهر. اما پیش از آنکه
+     دانشنامه باشد، یک دفتر یادداشت بود.</p>
+</section>
+
+<p>در سخت‌ترین روزهای این سرزمین، وقتی انگار تاریکی همه‌جا را گرفته بود، با خودم فکر کردم
+   نور بالاخره به این خاک می‌تابد. و تا آن روز، کاری هست که از دست من برمی‌آید:
+   بروم شهرهای کوچکی را ببینم که اسمشان در هیچ فهرستی نیست.</p>
+
+<p>رفتم. شهر به شهر، جاده به جاده. و چیزی دیدم که انتظارش را نداشتم — نه در بناها،
+   در آدم‌ها. هم‌وطنانی شجاع و همدل، در جاهایی که روی نقشه‌ی گردشگری هیچ‌کس علامتشان
+   نزده بود. میزبانی‌هایی که نه در تبلیغات جایی داشتند و نه در هیچ سایت رزروی.
+   و یاد کسانی که دل به تاریکی زدند تا دیگران بمانند و به این خاک افتخار کنند.</p>
+
+<p>همان‌جا تصمیم گرفتم بنویسم. نه یک سفرنامه‌ی شخصی — چیزی که بماند و به کار بعدی‌ها بیاید.</p>
+
+<div class="sa-pg__verse">
+  <b>شمالم تا جنوبم عشق، چه خاک و گندمی دارم<br>
+     صدام یاری کنه باید، بگم چه مردمی دارم</b>
+  <span>این دو خط، همان چیزی است که در جاده زیر لب می‌خوانم.</span>
+</div>
+
+<h3>اینجا چه خبر است</h3>
+
+<p>سرزمین آریان یک نقشه‌ی زنده از ایران است. برای هر استان و هر شهرستان، یک صفحه؛
+   و به‌مرور، برای جاذبه‌ها، غذاهای محلی، سوغات و مسیرهای سفر هم.</p>
+
+<div class="sa-pg__grid">
+  <div class="sa-pg__card"><b>۳۱ استان</b><span>راهنمای کامل هر استان: تاریخ، جغرافیا، فرهنگ، مردم و آنچه باید ببینید.</span></div>
+  <div class="sa-pg__card"><b>شهرستان به شهرستان</b><span>نقشه‌ی کلیک‌پذیر هر استان و صفحه‌ای برای هر شهرستان — از مرکز استان تا دورافتاده‌ترین بخش.</span></div>
+  <div class="sa-pg__card"><b>جاذبه با داده‌ی واقعی</b><span>فاصله، زمان رانندگی، وضعیت جاده، ماه‌های مناسب — نه فقط توصیف زیبا.</span></div>
+  <div class="sa-pg__card"><b>مردم محلی</b><span>هر صفحه با مشارکت اهالی همان دیار کامل‌تر می‌شود. نام فرستنده می‌ماند.</span></div>
+</div>
+
+<h3>قولی که داده‌ایم</h3>
+
+<ul class="sa-pg__vows">
+  <li>هر عدد، هر تاریخ و هر ادعای مشخص، منبع دارد. منبع‌ها پایین هر صفحه، با شماره.</li>
+  <li>آمار رسمی فقط از مرجع رسمی. جمعیت و مساحت را از وبلاگ نقل نمی‌کنیم.</li>
+  <li>وقتی چیزی را نمی‌دانیم، می‌نویسیم نمی‌دانیم. جای خالی بهتر از حدس است.</li>
+  <li>هر اصلاحی که از مردم محلی برسد، بررسی و اعمال می‌شود — و اسمشان ثبت می‌ماند.</li>
+  <li class="no">اغراق نمی‌کنیم. «بهترین»، «بی‌نظیرترین» و «تنها جای دنیا» را بدون سند نمی‌نویسیم.</li>
+  <li class="no">هیچ قومی را با قوم دیگر مقایسه نمی‌کنیم. اینجا جای رقابت نیست.</li>
+  <li class="no">محتوای تبلیغاتی را بدون برچسب «تبلیغ» منتشر نمی‌کنیم.</li>
+</ul>
+
+<h3>هنوز کامل نیست</h3>
+
+<p>صادق باشم: این سایت تازه راه افتاده و کامل نیست. بعضی شهرستان‌ها هنوز صفحه ندارند،
+   بعضی صفحه‌ها باید بازنویسی شوند، و عکس‌های بیشتری لازم داریم — عکس واقعی، از خود آن
+   جاده و آن روستا.</p>
+
+<p>اگر اهل یکی از این شهرها هستید و می‌بینید چیزی اشتباه یا ناقص است، همان‌جا بایستید و
+   به ما بگویید. این سایت با همین پیام‌ها ساخته می‌شود.</p>
+
+<div class="sa-pg__sign">
+  <div>
+    <b>محمدرضا لک</b>
+    بنیان‌گذار و سردبیر سرزمین آریان
+  </div>
+  <div>
+    <a href="mailto:Mail@sarzaminaryan.ir">Mail@sarzaminaryan.ir</a>
+  </div>
+</div>
+
+</div>

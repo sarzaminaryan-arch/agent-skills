@@ -1,0 +1,26 @@
+{
+  "name": "Write a Persian how-to article that does not read as AI output",
+  "skills": ["content-humanizer"],
+  "query": "یک مقاله‌ی آموزشی فارسی حدود ۱۲۰۰ کلمه درباره‌ی اینکه چرا افزونه‌ی کش برای کاربران لاگین‌شده کار نمی‌کند بنویس. باید کاملاً انسانی بخوانده شود.",
+  "expected_behavior": [
+    "Step 1: Confirm language, article type, reader, length, and sources; propose defaults instead of stalling",
+    "Step 2: Write the one-sentence promise and the single claim before any prose",
+    "Step 3: Build a how-to skeleton with a format and word budget per section, per references/structure-patterns.md",
+    "Step 4: Open with one of the six patterns in references/openings.md, never with «در دنیای امروز»",
+    "Step 5: Draft with varied sentence length, at least one explicit stance and one admitted limitation",
+    "Step 6: Run scripts/humanize_lint.mjs with --lang fa and fix every error",
+    "Step 7: Walk references/editorial-checklist.md and mark unsourced claims with [نیازمند منبع]",
+    "Step 8: Deliver Markdown with YAML front matter including excerpt, image_brief, and needs_source"
+  ],
+  "success_criteria": [
+    "humanize_lint.mjs exits 0 on the delivered draft",
+    "No banned phrase from references/ai-tells.md §1 appears",
+    "Sentence-length standard deviation is at least 6",
+    "No heading is named «مقدمه» or «نتیجه‌گیری»",
+    "List-to-prose ratio stays under 30 percent",
+    "ZWNJ is used correctly in می/نمی and ها/تر forms; no Arabic ي or ك",
+    "At least one first-person judgement and one admitted limitation appear",
+    "No invented statistics; unsourced claims are explicitly flagged",
+    "Front matter includes an image brief handed off to featured-image-art-direction"
+  ]
+}

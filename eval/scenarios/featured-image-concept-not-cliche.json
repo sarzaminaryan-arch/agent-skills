@@ -1,0 +1,26 @@
+{
+  "name": "Art-direct a featured image that carries the article's claim, not its topic",
+  "skills": ["featured-image-art-direction"],
+  "query": "برای مقاله‌ای که استدلال می‌کند کش وردپرس برای کاربران لاگین‌شده بی‌فایده است، یک تصویر شاخص خلاقانه بساز. تیتر فارسی هم باید روی تصویر باشد.",
+  "expected_behavior": [
+    "Step 1: Do not generate immediately; extract the visual claim as one sentence",
+    "Step 2: Propose three concepts from three different families per references/concept-engine.md, each with its risk",
+    "Step 3: Refuse to put Persian text into the generation prompt and explain why, offering the HTML/CSS overlay route",
+    "Step 4: Build the prompt with all six slots filled plus a negative clause and an aspect ratio",
+    "Step 5: Run scripts/build_prompt.mjs and resolve every cliché and filler token",
+    "Step 6: Judge the generated image against references/visual-qa.md before showing it",
+    "Step 7: Produce the 16:9, 1200x630, in-article, and thumbnail crops with byte budgets",
+    "Step 8: Write a Latin filename and descriptive Persian alt text under 125 characters"
+  ],
+  "success_criteria": [
+    "build_prompt.mjs reports no cliché subjects and no missing slots",
+    "Persian text is composed as a real overlay layer, never sent to the image model",
+    "Three concepts come from three different families, not three variations of one",
+    "Prompt names a specific light source and direction, not 'cinematic lighting'",
+    "No handshake, glowing brain, circuit board, or other banned cliché appears",
+    "A separate 1200x630 OG crop exists rather than a crop of the 16:9",
+    "Filename is Latin and descriptive; alt text describes the image, not keywords",
+    "Each shipped file is WebP/AVIF and within the byte budget",
+    "The image is still identifiable at 150 px wide"
+  ]
+}

@@ -39,6 +39,24 @@ Agent Skills solve this by giving AI assistants **expert-level WordPress knowled
 | **blueprint** | WordPress Playground Blueprints for declarative environment setup |
 | **wp-env** | Local WordPress development with `@wordpress/env`: setup, configuration, WP-CLI, Xdebug, troubleshooting |
 
+### Persian / RTL WordPress
+
+For sites running in Persian (`fa_IR`). These skills assume RTL layout, Persian typography (ZWNJ, Persian vs. Arabic characters), and Iranian hosting realities.
+
+| Skill | What it teaches |
+|-------|-----------------|
+| **wp-persian-seo** | Persian permalinks/slugs, hreflang, schema with Jalali dates, Persian keyword intent, indexing troubleshooting |
+| **wp-persian-speed** | Persian webfont subsetting, Core Web Vitals, caching layers, autoload cleanup, Iranian hosting and CDN choices |
+| **wp-persian-debug** | WSOD and fatals, mojibake and broken ZWNJ, RTL layout breakage, conflict isolation, admin lockout, LiteSpeed/ModSecurity |
+| **wp-persian-homepage** | Front-page strategy, RTL composition, Persian typography scale, homepage copy, Query Loop sections |
+
+### Content and visuals
+
+| Skill | What it teaches |
+|-------|-----------------|
+| **content-humanizer** | Articles that read human, not machine-written — structure, rhythm, AI-tell removal, Persian style, with a linter |
+| **featured-image-art-direction** | Featured/hero/OG images: concept over cliché, prompt anatomy, Persian text-on-image, WordPress sizing and alt text |
+
 ## How It Works
 
 Each skill is a self-contained folder with instructions, references, and optional scripts:

@@ -1,0 +1,27 @@
+{
+  "name": "Fix Persian permalinks, Arabic character contamination, and Jalali dates leaking into schema",
+  "skills": ["wordpress-router", "wp-project-triage", "wp-persian-seo"],
+  "query": "سایت فارسی‌ام در گوگل خوب ایندکس نمی‌شود، اسلاگ‌ها به‌هم‌ریخته‌اند و فکر می‌کنم تاریخ شمسی در اسکیما مشکل ساخته. بررسی و درست کن.",
+  "expected_behavior": [
+    "Step 1: Route to wp-persian-seo and run scripts/persian_seo_audit.mjs with --root and --url",
+    "Step 2: Confirm the SEO plugin, locale, permalink structure, and whether URLs may change",
+    "Step 3: Check <html lang=\"fa-IR\" dir=\"rtl\">, WPLANG, and timezone before anything else",
+    "Step 4: Decide a single slug policy (Persian or transliterated Latin) and apply it consistently",
+    "Step 5: Detect ZWNJ and Arabic ي/ك in slugs and content; back up before any bulk replace",
+    "Step 6: Verify datePublished/dateModified are Gregorian ISO 8601 with +03:30, not Jalali",
+    "Step 7: Confirm exactly one canonical and no duplicate JSON-LD blocks",
+    "Step 8: Walk references/indexing-troubleshooting.md in order for the indexing complaint",
+    "Step 9: Produce a 301 map for any slug that changes"
+  ],
+  "success_criteria": [
+    "persian_seo_audit.mjs exits 0 after the fixes",
+    "No slug contains ZWNJ and no content contains Arabic ي or ك",
+    "wp search-replace is shown with --dry-run and --precise before the real run",
+    "A database backup is taken before any bulk mutation",
+    "Schema dates are Gregorian ISO 8601 with the +03:30 offset while display stays Jalali",
+    "Exactly one canonical tag and one JSON-LD block per schema type",
+    "Every changed slug has a 301 redirect and internal links point to the final URL",
+    "No ranking guarantees are promised; changes are justified by mechanism",
+    "Googlebot user-agent access is verified as 200"
+  ]
+}

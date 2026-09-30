@@ -54,6 +54,26 @@ Route by intent even if repo kind is broad (like `wp-site`):
 - **Security / nonces / capabilities / sanitization/escaping / uploads**
   - Route → `wp-security` (planned).
 
+### Persian / RTL sites
+
+Route here when the site language is Persian (`fa_IR`), the request is written in Persian, or the work is explicitly about an RTL WordPress site. These skills assume `dir="rtl"`, Persian typography (ZWNJ, Persian vs Arabic characters), and Iranian hosting realities.
+
+- **Persian SEO / permalinks / slugs / hreflang / schema / not indexed / Jalali dates in schema**
+  - Route → `wp-persian-seo`.
+- **Slow Persian site / Persian webfonts / Core Web Vitals / caching layers / Iranian host or CDN choice**
+  - Route → `wp-persian-speed`. For generic profiling internals, also read `wp-performance`.
+- **White screen / 500 / 508 / garbled Persian text (mojibake) / broken ZWNJ / RTL layout breakage / plugin conflict / admin lockout / ModSecurity**
+  - Route → `wp-persian-debug`.
+- **Building or redesigning the front page of a Persian site / hero and section composition / Persian homepage copy**
+  - Route → `wp-persian-homepage`. For block markup rules, also read `wp-patterns`; for `theme.json`, `wp-block-themes`.
+
+### Content and visuals
+
+- **Writing or rewriting articles, blog posts, landing copy that must read human (Persian or English)**
+  - Route → `content-humanizer`.
+- **Featured images, hero images, OG/social cards, in-article illustrations, image generation prompts**
+  - Route → `featured-image-art-direction`.
+
 ## Step 3: guardrails checklist (always)
 
 - Verify detected tooling before suggesting commands (Composer vs npm/yarn/pnpm).

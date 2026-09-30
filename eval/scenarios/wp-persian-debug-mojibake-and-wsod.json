@@ -1,0 +1,27 @@
+{
+  "name": "Diagnose garbled Persian text and a white screen without making it worse",
+  "skills": ["wordpress-router", "wp-persian-debug"],
+  "query": "بعد از انتقال سایت به هاست جدید، متن‌های فارسی به شکل Ø¢Ù…ÙˆØ²Ø´ نمایش داده می‌شوند و بعضی صفحات سفیدند. درستش کن.",
+  "expected_behavior": [
+    "Step 1: Run scripts/debug_triage.mjs and capture the exact HTTP status and error text before changing anything",
+    "Step 2: Enable WP_DEBUG_LOG with WP_DEBUG_DISPLAY false, reproduce, and read the log",
+    "Step 3: For the encoding symptom, inspect HEX of the stored data to decide whether the database is corrupt or only the display is wrong",
+    "Step 4: Follow the decision tree in references/encoding-and-mojibake.md §2 instead of re-saving content",
+    "Step 5: Take a database export before any conversion, and test the CONVERT on a single row first",
+    "Step 6: For the white screen, get the real status code and the fatal error line before disabling plugins",
+    "Step 7: Use binary search for conflict isolation, and check mu-plugins and drop-ins",
+    "Step 8: Remove debug constants and delete debug.log when finished"
+  ],
+  "success_criteria": [
+    "Exact HTTP status and exact error text are captured before any mutation",
+    "WP_DEBUG_DISPLAY is never set to true on production",
+    "Constants are verified to be above the 'stop editing' marker",
+    "HEX inspection distinguishes double-encoded data from a display-only problem",
+    "A database backup precedes any encoding conversion",
+    "The mojibake CONVERT is tested on one row before being applied broadly",
+    "Content is not re-saved through the editor while mojibake is present",
+    "Conflict isolation uses binary search and checks mu-plugins and drop-ins",
+    "debug_triage.mjs reports no error-level findings at the end",
+    "Debug constants are removed and debug.log is deleted"
+  ]
+}

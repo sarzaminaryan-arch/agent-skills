@@ -1,0 +1,28 @@
+{
+  "name": "Speed up a slow Persian WordPress site without guessing",
+  "skills": ["wordpress-router", "wp-project-triage", "wp-persian-speed"],
+  "query": "سایت وردپرس فارسی‌ام روی موبایل خیلی کند است و متن موقع لود می‌پرد. مخاطبم داخل ایران است و روی هاست اشتراکی هستم. سریعش کن.",
+  "expected_behavior": [
+    "Step 1: Run scripts/speed_audit.mjs with --root and --url before proposing any change",
+    "Step 2: Establish a baseline per references/measurement.md: TTFB uncached, cached, and logged-in, each with conditions recorded",
+    "Step 3: Start with fonts — audit payload, subset with --layout-features preserved, convert to woff2, cap at two weights",
+    "Step 4: Fix CLS with a size-adjust fallback @font-face rather than only font-display: swap",
+    "Step 5: Self-host fonts instead of a foreign CDN, given the Iranian audience",
+    "Step 6: Verify the cache actually HITs before recommending another caching plugin",
+    "Step 7: Check autoload size and unbounded queries for the logged-in TTFB",
+    "Step 8: Only after 1-7, discuss hosting/CDN, and ask about audience location before recommending a foreign CDN",
+    "Step 9: Record before/after numbers in a baseline file"
+  ],
+  "success_criteria": [
+    "No change is recommended without a recorded before-number",
+    "Font payload is brought to 150 KB or less, woff2 only, at most two weights",
+    "pyftsubset keeps --layout-features='*' so Persian letters still join",
+    "Exactly one font is preloaded, with crossorigin",
+    "CLS fix uses metric overrides, not just font-display",
+    "Cache HIT/MISS is verified with response headers before blaming the plugin",
+    "A foreign CDN is not recommended for an Iran-only audience without discussion",
+    "Risky minify/combine/defer flags are enabled one at a time with RTL layout re-tested",
+    "A database backup precedes autoload or revision cleanup",
+    "speed_audit.mjs exits 0 and before/after numbers are reported with conditions"
+  ]
+}

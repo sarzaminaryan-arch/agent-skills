@@ -1,0 +1,29 @@
+{
+  "name": "Build a Persian service-business homepage with one primary action",
+  "skills": ["wordpress-router", "wp-block-themes", "wp-patterns", "wp-persian-homepage"],
+  "query": "برای یک شرکت طراحی سایت، صفحه‌ی اول وردپرس فارسی بساز. قالب بلوکی است. می‌خواهم حرفه‌ای و خلاقانه باشد.",
+  "expected_behavior": [
+    "Step 1: Do not start laying out; answer the five questions in SKILL.md §0, including a single primary action",
+    "Step 2: Pick the service-business skeleton from references/section-patterns.md and cap sections at 8",
+    "Step 3: Write real Persian copy — hero headline under 9 words, specific CTA verbs, no «خوش آمدید»",
+    "Step 4: Design the 360 px layout first, with RTL reading order and logical CSS properties",
+    "Step 5: Apply the Persian type scale: body 17px+, line-height 1.8-2.0, zero letter-spacing",
+    "Step 6: Build templates/front-page.html plus patterns, following wp-patterns markup rules",
+    "Step 7: Configure any Query Loop with inherit:false and a query-no-results empty state",
+    "Step 8: Refuse to invent testimonials, client logos, or statistics; mark placeholders explicitly",
+    "Step 9: Run scripts/homepage_check.mjs and walk references/homepage-checklist.md"
+  ],
+  "success_criteria": [
+    "homepage_check.mjs exits 0",
+    "Exactly one h1, sensible heading order, no level jumps",
+    "One visually dominant primary CTA; secondary actions are demoted",
+    "Hero headline is under 9 words and contains a concrete noun and verb",
+    "No banned homepage phrase from references/persian-copywriting.md §8 appears",
+    "Body font size is 17px or more and line-height is 1.8-2.0 in theme.json",
+    "No letter-spacing is applied to Persian text",
+    "No inline <style> tags; colours and spacing come from theme.json presets",
+    "Every Query Loop sets inherit:false and includes query-no-results",
+    "No fabricated testimonials, logos, or numbers; placeholders are labelled",
+    "No horizontal scroll at 360 px and all strings are escaped and translatable"
+  ]
+}

@@ -6,11 +6,22 @@
 
 ## دانلود
 
+**نشانی درست (تست‌شده):**
+
 ```
-https://github.com/sarzaminaryan-arch/agent-skills/raw/arena/01a0ef63-agent-skills/audits/sarzaminaryan/downloads/sarzaminaryan-child-v2.4.0.zip
+https://raw.githubusercontent.com/sarzaminaryan-arch/agent-skills/refs/heads/arena/01a0ef63-agent-skills/audits/sarzaminaryan/downloads/sarzaminaryan-child-v2.4.0.zip
 ```
 
-یا از صفحه‌ی گیت‌هاب: `audits/sarzaminaryan/downloads/` → روی فایل کلیک → **Download**.
+> نام شاخه‌ی ما اسلش دارد (`arena/01a0ef63-...`). به همین دلیل شکل
+> `github.com/…/raw/…` کار **نمی‌کند** — گیت‌هاب نمی‌فهمد نام شاخه کجا تمام
+> می‌شود و ۴۰۴ می‌دهد. دو شکل بالا و پایین درست‌اند.
+
+**یا مطمئن‌ترین راه — از خود گیت‌هاب:**
+
+https://github.com/sarzaminaryan-arch/agent-skills/blob/arena/01a0ef63-agent-skills/audits/sarzaminaryan/downloads/sarzaminaryan-child-v2.4.0.zip
+
+این صفحه را باز کنید و دکمه‌ی **Download raw file** (آیکن ⤓ بالا سمت راست) را بزنید.
+
 
 ## نصب — ۳ دقیقه، همه از پیشخوان
 
